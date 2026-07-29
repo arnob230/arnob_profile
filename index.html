@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Name — Portfolio</title>
+<meta name="description" content="Personal portfolio — developer, designer, researcher.">
+
+<!--
+  ============================================================
+  QUICK EDIT GUIDE — search for these markers to personalize
+  ============================================================
+  1.  [EDIT: NAME]        -> your name (appears in logo + hero + footer)
+  2.  [EDIT: ROLES]       -> the typed rotating job titles in the hero
+  3.  [EDIT: BIO]         -> the short paragraph under the hero title
+  4.  [EDIT: PHOTO]       -> replace the placeholder avatar with <img src="your-photo.jpg">
+  5.  [EDIT: SOCIALS]     -> replace href="#" with your real profile links
+  6.  [EDIT: SERVICES]    -> six service cards, edit title + text
+  7.  [EDIT: SKILLS]      -> skill chips, add/remove as needed
+  8.  [EDIT: EDUCATION]   -> timeline entries
+  9.  [EDIT: RESEARCH]    -> research/publication cards (delete section if not needed)
+  10. [EDIT: PROJECTS]    -> project cards, add more by copying a .project-card block
+  11. [EDIT: CONTACT]     -> phone / email / social links
+  12. [EDIT: FORM ACTION] -> the contact form is front-end only right now.
+                             Connect it to Formspree / EmailJS / your own backend
+                             so messages actually reach your inbox.
+  13. [EDIT: GALLERY]     -> the "View Photos" button in the hero opens a photo
+                             gallery. Add real images inside each .gallery-item.
+
+  FILES: index.html (structure) · style.css (all styling) · script.js (behavior)
+  Keep all three files in the same folder — index.html links to the other two.
+  ============================================================
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<header id="siteHeader">
+  <div class="wrap">
+    <nav>
+      <a href="#home" class="logo">arnob<span class="dot">.</span>profile</a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" class="active">home</a></li>
+        <li><a href="#services">services</a></li>
+        <li><a href="#skills">skills</a></li>
+        <li><a href="#education">education</a></li>
+        <li><a href="#research">research</a></li>
+        <li><a href="#projects">projects</a></li>
+        <li><a href="#contact">contact</a></li>
+      </ul>
+      <a href="#contact" class="nav-cta" id="navCta">let's talk</a>
+      <button class="burger" id="burgerBtn" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </nav>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="home">
+  <div class="aurora"></div>
+  <div class="dot-grid"></div>
+  <div class="wrap hero-grid">
+    <div class="hero-text">
+      
+      <!-- [EDIT: NAME] -->
+      <h1>Hi, I'm <span class="grad-text">Arnob Biswas</B></span></h1>
+      <!-- [EDIT: ROLES] -->
+      <p class="hero-role"><span class="prompt mono">&gt;</span> <span id="typedRole"></span><span class="cursor">&nbsp;</span></p>
+      <!-- [EDIT: BIO] -->
+      <p class="bio">I'm currently pursuing my degree in Computer Science, and I'm deeply interested in planning my career around software development. I enjoy turning complicated problems into clean, usable interfaces, and I'm always excited to learn from real projects and forward-thinking teams.</p>
+      <!-- [EDIT: SOCIALS] -->
+      <div class="social-row">
+        <a href="www.linkedin.com/in/arnob-biswas-20870234b" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="https://www.facebook.com/share/1C9X68m9B4/" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/_a.r.n.o.b?igsh=MnF2Zmh3cThpeGVz" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+      </div>
+
+      <div class="cta-row">
+        <a href="#contact" class="btn btn-solid">Hire Me <i class="fa-solid fa-arrow-right"></i></a>
+        <a href="arnob-cv.pdf" target="_blank" class="btn btn-outline">View CV</a>
+        <a href="arnob-cv.pdf" download="arnob-cv.pdf" class="btn btn-outline">Download CV</a>
+        <button type="button" class="btn btn-photo" id="openGallery"><i class="fa-solid fa-images"></i> View Photos</button>
+      </div>
+    </div>
+
+    <div class="avatar-wrap">
+      <div class="avatar-ring">
+        <div class="avatar-inner">
+           <img src="Arnob-photo.jpeg" style="width:100%;height:100%;object-fit:cover;border-radius:50%;"> 
+         
+         
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-cue"><span></span>scroll</div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section class="section" id="services">
+  <div class="wrap">
+    <div class="section-head reveal">
+      
+      <h2>What I can build for you</h2>
+      <p>A quick overview of where I add the most value. <!-- [EDIT: SERVICES] --></p>
+    </div>
+    <div class="services-grid">
+  <div class="service-card reveal">
+    <i class="fa-solid fa-code"></i>
+    <h3>Frontend Development</h3>
+    <p>Responsive, accessible interfaces built with HTML, CSS and JavaScript — fast to load and pleasant to use.</p>
+  </div>
+  <div class="service-card reveal">
+    <i class="fa-solid fa-database"></i>
+    <h3>Database Design</h3>
+    <p>Well-structured, efficient databases that keep your data organized, consistent, and easy to query at scale.</p>
+  </div>
+  <div class="service-card reveal">
+    <i class="fa-solid fa-server"></i>
+    <h3>Backend Development</h3>
+    <p>Reliable server-side logic and REST APIs that keep your product running smoothly behind the scenes.</p>
+  </div>
+  <div class="service-card reveal">
+    <i class="fa-solid fa-flask"></i>
+    <h3>Research</h3>
+    <p>Applied research and data analysis, from exploring a problem to a solution you can actually ship.</p>
+  </div>
+  <div class="service-card reveal">
+    <i class="fa-solid fa-file-lines"></i>
+    <h3>Technical Writing</h3>
+    <p>Clear documentation, articles, and content that explains complex ideas without losing anyone.</p>
+  </div>
+  <div class="service-card reveal">
+    <i class="fa-solid fa-microchip"></i>
+    <h3>Electrical Circuit Design</h3>
+    <p>Designing and analyzing circuits, from concept and schematics to a working, tested hardware prototype.</p>
+  </div>
+</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SKILLS ============ -->
+<section class="section" id="skills" style="background:var(--black-2);">
+  <div class="wrap">
+    <div class="section-head reveal">
+      
+      <h2>Tools I work with</h2>
+      <p><!-- [EDIT: SKILLS] add, remove, or reorder freely --></p>
+    </div>
+    <div class="skills-grid">
+  <div class="skill-chip reveal"><i class="fa-brands fa-html5" style="color:#ff6f61"></i><span>HTML5</span></div>
+  <div class="skill-chip reveal"><i class="fa-brands fa-css3-alt" style="color:#4fd2f7"></i><span>CSS3</span></div>
+  <div class="skill-chip reveal"><i class="fa-brands fa-js" style="color:#f7d54f"></i><span>JavaScript</span></div>
+  <div class="skill-chip reveal"><i class="fa-brands fa-react" style="color:#4fd2f7"></i><span>React</span></div>
+  <div class="skill-chip reveal"><i class="fa-brands fa-python" style="color:#ff6fa0"></i><span>Python</span></div>
+  <div class="skill-chip reveal"><i class="fa-brands fa-java" style="color:#ff3b5c"></i><span>Java</span></div>
+  <div class="skill-chip reveal"><i class="fa-solid fa-c" style="color:#4fd2f7"></i><span>C</span></div>
+  <div class="skill-chip reveal"><i class="fa-solid fa-database" style="color:#f7d54f"></i><span>MySQL</span></div>
+  <div class="skill-chip reveal"><i class="fa-solid fa-leaf" style="color:#8fef8f"></i><span>MongoDB</span></div>
+  <div class="skill-chip reveal"><i class="fa-brands fa-android" style="color:#8fef8f"></i><span>Android</span></div>
+  <div class="skill-chip reveal"><i class="fa-brands fa-apple" style="color:#f5f7fb"></i><span>iOS / Swift</span></div>
+  <div class="skill-chip reveal"><i class="fa-solid fa-brain" style="color:#ff6fa0"></i><span>Machine Learning</span></div>
+  <div class="skill-chip reveal"><i class="fa-brands fa-node-js" style="color:#8fef8f"></i><span>Node.js</span></div>
+  <div class="skill-chip reveal"><i class="fa-brands fa-git-alt" style="color:#ff3b5c"></i><span>Git</span></div>
+  <div class="skill-chip reveal"><i class="fa-brands fa-figma" style="color:#4fd2f7"></i><span>Figma</span></div>
+  <div class="skill-chip reveal"><i class="fa-solid fa-network-wired" style="color:#ff6fa0"></i><span>Cisco</span></div>
+  <div class="skill-chip reveal"><i class="fa-solid fa-microchip" style="color:#f7d54f"></i><span>EMU8086</span></div>
+  <div class="skill-chip reveal"><i class="fa-solid fa-bolt" style="color:#ff3b5c"></i><span>EEE Apps</span></div>
+</div>
+  </div>
+</section>
+
+<!-- ============ EDUCATION ============ -->
+<section class="section" id="education">
+  <div class="wrap">
+    <div class="section-head reveal" style="margin-left:auto;margin-right:auto;text-align:center;">
+      
+      <h2>My academic path</h2>
+    </div>
+    <div class="timeline">
+      <!-- [EDIT: EDUCATION] -->
+      <div class="t-item reveal">
+        <span class="t-dot"></span>
+        <div class="t-card">
+          <span class="t-tag">2023 — Present</span>
+          <h4>University</h4>
+          <p>B.Sc. in Computer Science &amp; Engineering<br>Southeast University<br>CGPA: 3.8 / 4.00</p>
+        </div>
+      </div>
+      <div class="t-item reveal">
+        <span class="t-dot"></span>
+        <div class="t-card">
+          <span class="t-tag">2020 — 2022</span>
+          <h4>Higher Secondary</h4>
+          <p>Science Group<br>Barishal Govt. Model School &amp; College<br>GPA: 4.50 / 5.00</p>
+        </div>
+      </div>
+      <div class="t-item reveal">
+        <span class="t-dot"></span>
+        <div class="t-card">
+          <span class="t-tag">2015 — 2020</span>
+          <h4>Secondary</h4>
+          <p>Science Group<br>Barapaika High School<br>GPA: 5.00 / 5.00</p>
+        </div>
+      </div>
+      <div class="t-item reveal">
+        <span class="t-dot"></span>
+        <div class="t-card">
+          <span class="t-tag">2010-2014</span>
+          <h4>Primary</h4>
+          <p>South Baherghat Govt. Primary School<br>GPA: 5.00 / 5.00</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ RESEARCH ============ -->
+<section class="section" id="research" style="background:var(--black-2);">
+  <div class="wrap">
+    <div class="section-head reveal">
+      
+      <h2>Research &amp; publications</h2>
+      <p><!-- [EDIT: RESEARCH] duplicate a .research-card block to add more, or delete this section entirely if not relevant --></p>
+    </div>
+    <div class="research-list">
+  <div class="research-card reveal">
+    <div class="r-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+    <div>
+      <span class="r-tag">Undergraduate Thesis · Ongoing</span>
+      <h3>Low-Light Image Enhancement</h3>
+      <p class="authors">Arnob Biswas (corresponding author), Co-author withheld</p>
+      <p class="abstract">This research explores techniques to improve the visibility and quality of images captured in low-light conditions, aiming to enhance detail, reduce noise, and produce clearer results for real-world use cases. Work is currently in progress.</p>
+      <span class="link-arrow">Read paper <i class="fa-solid fa-arrow-right"></i></span>
+    </div>
+  </div>
+  <div class="research-card reveal">
+    <div class="r-icon"><i class="fa-solid fa-flask"></i></div>
+    <div>
+      <span class="r-tag">In Collaboration</span>
+      <h3>AI-Based Chicken Identification System for Market Buyers</h3>
+      <p class="authors">Arnob Biswas (corresponding author), Shuvo Biswas, Farin Anjum, Farana Akter</p>
+      <p class="abstract">This study proposes an AI-based system to help market buyers identify chicken quality and characteristics using image recognition, aiming to support more informed purchasing decisions at the point of sale.</p>
+      <span class="link-arrow">Read paper <i class="fa-solid fa-arrow-right"></i></span>
+    </div>
+  </div>
+</div>
+  </div>
+</section>
+
+<!-- ============ PROJECTS ============ -->
+<section class="section" id="projects">
+  <div class="wrap">
+    <div class="section-head reveal">
+     
+      <h2>Things I've built</h2>
+      <p><!-- [EDIT: PROJECTS] copy a .project-card block to add more --></p>
+    </div>
+    <div class="projects-grid">
+  <div class="project-card reveal">
+    <span class="p-id mono">PROJECT_01</span>
+    <h3>Blood Donation Management System</h3>
+    <p>A web app with three user roles — Admin, Donor, and Blood Bank — where donors can give or search for blood, blood banks fulfill requests, and the admin oversees everything.</p>
+    <div class="tag-row"><span>HTML</span><span>CSS</span><span>Python</span><span>MySQL</span></div>
+    <span class="link-arrow" style="margin-top:16px;">View project <i class="fa-solid fa-arrow-right"></i></span>
+  </div>
+  <div class="project-card reveal">
+    <span class="p-id mono">PROJECT_02</span>
+    <h3>Online Vehicle Parking System</h3>
+    <p>A web-based platform for parking cars, bikes, and other vehicles, with separate user flows for vehicle owners and admins managing the parking space.</p>
+    <div class="tag-row"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>MongoDB</span></div>
+    <span class="link-arrow" style="margin-top:16px;">View project <i class="fa-solid fa-arrow-right"></i></span>
+  </div>
+  <div class="project-card reveal">
+    <span class="p-id mono">PROJECT_03</span>
+    <h3>Bank Management System</h3>
+    <p>A demo application built to understand and simulate how core banking operations function behind the scenes.</p>
+    <div class="tag-row"><span>HTML</span><span>CSS</span><span>Node.js</span></div>
+    <span class="link-arrow" style="margin-top:16px;">View project <i class="fa-solid fa-arrow-right"></i></span>
+  </div>
+  <div class="project-card reveal">
+    <span class="p-id mono">PROJECT_04</span>
+    <h3>Cotton Company Management System</h3>
+    <p>A web app that helps a cotton company track total earnings, manage operations, and ensure accurate product availability.</p>
+    <div class="tag-row"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Node.js</span><span>MongoDB</span></div>
+    <span class="link-arrow" style="margin-top:16px;">View project <i class="fa-solid fa-arrow-right"></i></span>
+  </div>
+  <div class="project-card reveal">
+    <span class="p-id mono">PROJECT_05</span>
+    <h3>Online Courier Management System</h3>
+    <p>A web-based system for managing courier deliveries — tracking shipments from booking through to final delivery.</p>
+    <div class="tag-row"><span>Web Development</span></div>
+    <span class="link-arrow" style="margin-top:16px;">View project <i class="fa-solid fa-arrow-right"></i></span>
+  </div>
+  <div class="project-card reveal">
+  <span class="p-id mono">PROJECT_06</span>
+  <h3>Hospital Management System</h3>
+  <p>A web-based system for managing hospital operations — patient records, appointments, and staff coordination in one place.</p>
+  <div class="tag-row"><span>Web Development</span></div>
+  <span class="link-arrow" style="margin-top:16px;">View project <i class="fa-solid fa-arrow-right"></i></span>
+</div>
+</div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="section" id="contact" style="background:var(--black-2);">
+  <div class="wrap">
+    <div class="section-head reveal">
+      
+      <h2>Let's work together</h2>
+      <p>Have a project in mind, or just want to say hi? Fill in the form and I'll get back to you within 24 hours.</p>
+    </div>
+
+    <div class="contact-grid reveal">
+      <div class="contact-info">
+        <h3>Contact information</h3>
+        <p>Fill up the form and I'll get back to you as soon as possible.</p>
+        <!-- [EDIT: CONTACT] -->
+        <div class="c-row">
+          <div class="c-ic"><i class="fa-solid fa-phone"></i></div>
+          <div><span class="label">Phone</span><a href="tel:+8801000000000">+880 1622657707</a></div>
+        </div>
+        <div class="c-row">
+          <div class="c-ic"><i class="fa-solid fa-envelope"></i></div>
+          <div><span class="label">Email</span><a href="mailto:you@example.com">arnobbiswas6847@gmail.com</a></div>
+        </div>
+        <div class="social-row" style="margin-top:16px;">
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+      </div>
+
+      <div class="contact-form">
+        <!-- [EDIT: FORM ACTION] connect this form to Formspree / EmailJS / your backend so submissions reach you -->
+        <form id="contactForm">
+          <div class="form-row">
+            <div class="field"><label for="fname">First name</label><input id="fname" type="text" required placeholder="Jane"></div>
+            <div class="field"><label for="lname">Last name</label><input id="lname" type="text" required placeholder="Doe"></div>
+          </div>
+          <div class="form-row">
+            <div class="field"><label for="email">Email</label><input id="email" type="email" required placeholder="jane@email.com"></div>
+            <div class="field"><label for="phone">Phone</label><input id="phone" type="tel" placeholder="+880 1XXXXXXXXX"></div>
+          </div>
+          <div class="field"><label for="message">Message</label><textarea id="message" required placeholder="Tell me a bit about your project..."></textarea></div>
+          <button type="submit" class="submit-btn">Send message</button>
+          
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap foot-row">
+    <p>© <span id="year"></span> Arnob Biswas. All rights reserved.</p>
+    <button class="to-top" id="toTop" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+  </div>
+</footer>
+
+<!-- ============ PHOTO GALLERY MODAL ============ -->
+<!-- [EDIT: GALLERY] replace each .gallery-item's <i> icon with
+     <img src="images/photo1.jpg" alt="..."> to show your real photos.
+     Copy a .gallery-item block to add more. -->
+<div class="gallery-overlay" id="galleryOverlay" aria-hidden="true">
+  <div class="gallery-panel">
+    <div class="gallery-head">
+      
+      <button type="button" class="gallery-close" id="closeGallery" aria-label="Close gallery"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="gallery-grid">
+  <div class="gallery-item" data-index="0"><img src="p11.jpeg" alt="Photo 1"><span>Photo 1</span></div>
+  <div class="gallery-item" data-index="1"><img src="p22.jpeg" alt="Photo 2"><span>Photo 2</span></div>
+  <div class="gallery-item" data-index="2"><img src="p33.jpeg" alt="Photo 3"><span>Photo 3</span></div>
+  <div class="gallery-item" data-index="3"><img src="p44.jpeg" alt="Photo 4"><span>Photo 4</span></div>
+  <div class="gallery-item" data-index="4"><img src="p55.jpeg" alt="Photo 5"><span>Photo 5</span></div>
+  <div class="gallery-item" data-index="5"><img src="p66.jpeg" alt="Photo 6"><span>Photo 6</span></div>
+</div>
+  </div>
+</div>
+
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <button type="button" class="lb-btn lb-close" id="lbClose" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+  <button type="button" class="lb-btn lb-prev" id="lbPrev" aria-label="Previous photo"><i class="fa-solid fa-chevron-left"></i></button>
+  <div class="lb-stage" id="lbStage"><i class="fa-solid fa-image"></i></div>
+  <button type="button" class="lb-btn lb-next" id="lbNext" aria-label="Next photo"><i class="fa-solid fa-chevron-right"></i></button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
